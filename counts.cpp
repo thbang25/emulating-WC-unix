@@ -2,7 +2,7 @@
 18/02/2024
 replicate wc **/
 
-#include "counts.h"
+#include "counts.h" 
 #include <sstream>
 
 int WordCounterPerline(const std::string& fileData) {//count words per line
