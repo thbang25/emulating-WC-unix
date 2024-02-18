@@ -8,7 +8,7 @@ replicate wc **/
 #include <string>
 #include <vector>
 
-int WordCounterPerline(const std::string& fileData);
-int WordCounter(const std::vector<std::string>& data);
+int WordCounterPerline(const std::string& fileData); //we looking through each line
+int WordCounter(const std::vector<std::string>& data); //sum the count
 
 #endif  // COUNTS_H

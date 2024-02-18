@@ -21,4 +21,4 @@ int WordCounter(const std::vector<std::string>& data) {//count number of words i
     for (const auto& fileData : data) {//manipulate data
         summ += WordCounterPerline(fileData);}
 
-    return summ;} //total number of words now summed
+    return summ;} //total number of words now summe
