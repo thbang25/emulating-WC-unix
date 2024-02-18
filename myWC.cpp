@@ -23,5 +23,5 @@ int main() {
     // test the words count
     std::cout << "Number of words: " << WordCounter(data) << std::endl;
 
-    return 0;
+    return 0; 
 }
