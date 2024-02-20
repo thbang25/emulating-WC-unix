@@ -22,6 +22,8 @@ int main() {
 
     // test the words count
     std::cout << "Number of words: " << WordCounter(data) << std::endl;
+	
+	std::cout << "Number of characters "<< charCounter(data) << std::endl;
 
     return 0; 
 }
