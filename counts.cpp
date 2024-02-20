@@ -12,7 +12,9 @@ int WordCounterPerline(const std::string& fileData) {//count words per line
     std::string wordinline;
 
     while (iss >> wordinline) {//count
+	if(ContainsNonSpecial(wordinline)){//if the word in the line contains non special character
     WordPerlineCntr++;}
+	}
 
     return WordPerlineCntr;}//word counter
 
@@ -31,12 +33,26 @@ bool checkSpecial(char special) {
     return SpecialCharSet.find(special) != std::string::npos; //npos to check the position if special
 }
 
+//count the number of non special characters
 int charCounter(const std::vector<std::string>& data) {
-    int SpecialCntr = 0;//counter
+    int nonSpecialCntr = 0;//counter
 
     for (const auto& fileData : data) {
         for (char special : fileData) {
             if (!checkSpecial(special)){
-                SpecialCntr++;}}}
-    return SpecialCntr;
+                nonSpecialCntr++;}}}//count when special is false
+    return nonSpecialCntr;
+}
+
+//check if the string has a combination of special and non special
+bool ContainsNonSpecial(const std::string& data) {
+    // a set of all possible non special characters
+	const std::string characterSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        for (char c : data) {
+        if (characterSet.find(c) != std::string::npos) {
+            return true;  // Found a value or values in the character set
+        }
+    }
+
+    return false;  // just special characters
 }
