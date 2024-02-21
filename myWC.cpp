@@ -6,6 +6,7 @@ replicate wc **/
 #include <iostream>
 #include <vector>
 
+
 int main() {
 	int cnt = 0; //line counter
     std::vector<std::string> data; //data
@@ -16,14 +17,12 @@ int main() {
 		cnt++; //increment
         data.push_back(fileData); //store
     }
-
-    // get the number of lines
-    std::cout << "Number of lines: " << cnt << std::endl;
-
-    // test the words count
-    std::cout << "Number of words: " << WordCounter(data) << std::endl;
+	std::vector<CharInfo> frequencyTable = characterFrequency(data); //table data
 	
-	std::cout << "Number of characters "<< charCounter(data) << std::endl;
+    std::cout << " Output: " <<cnt <<" "<<WordCounter(data)<<" "<<  charCounter(data);
+	std::cout << " ["; for (const auto& entry : frequencyTable) {std::cout << entry.character << ":" << entry.count << " ";}
+    std::cout << "]" << std::endl; //display output
 
     return 0; 
 }
+
